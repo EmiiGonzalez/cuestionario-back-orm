@@ -16,3 +16,11 @@ export const createRUnicas = async (req, res) => {
         return res.status(500).json({message: error.message});
     }
 }
+
+export const updateRUnicas = async (req, res) => {
+    try {
+        res.send("updateRUnicas");
+    } catch (error) {
+        return res.status(500).json({message: error.message});
+    }
+}
