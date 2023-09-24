@@ -8,7 +8,7 @@ export const rMultiples = sequelize.define('rMultiples',{
         autoIncrement: true,
     },
     pNumero: {
-        type: DataTypes.INTEGER(1),
+        type: DataTypes.STRING(3),
         allowNull: false
     },
     respuesta :{

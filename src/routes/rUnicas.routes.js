@@ -1,12 +1,12 @@
 import { Router } from "express";
 import { getRUnicas, createRUnicas, updateRUnicas } from "../controllers/form.controller.js";
-const router = Router();
+const RouterUnicas = Router();
 
-router
-    .get('/formulario', getRUnicas)
-    .post('/formulario', createRUnicas)
-    .put('/formulario/:id', updateRUnicas)
-    .delete('/formulario/:id')
-    .get('/formulario/:id')
+RouterUnicas
+    .get('/rUnicas', getRUnicas)
+    .post('/rUnicas', createRUnicas)
+    .put('/rUnicas/:id', updateRUnicas)
+    .delete('/rUnicas/:id')
+    .get('/rUnicas/:id')
 
-export default router
+export default RouterUnicas

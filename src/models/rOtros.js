@@ -9,7 +9,7 @@ export const rOtros = sequelize.define('rOtros',{
         allowNull: false
     },
     pNumero: {
-        type: DataTypes.INTEGER(2),
+        type: DataTypes.STRING(3),
         allowNull: false
     },
     texto :{
