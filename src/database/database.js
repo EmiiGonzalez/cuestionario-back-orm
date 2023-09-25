@@ -1,6 +1,12 @@
 import { Sequelize } from "sequelize";
+import dotenv from "dotenv";
 
-export const sequelize = new Sequelize("cuestdb", "root", "", {
-    host: "localhost",
-    dialect: "mysql"
-})
+// Carga las variables de entorno desde el archivo .env
+dotenv.config({ path: ".env" });
+
+
+export const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
+    dialect: process.env.DB_DIALECT,
+    // Otras opciones de configuración de Sequelize
+});
