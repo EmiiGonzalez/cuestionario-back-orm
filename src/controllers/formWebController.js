@@ -29,7 +29,7 @@ export const setRWeb = async (req, res) => {
       await Promise.all(insertarTexto);
       await Promise.all(insertarMultiples);
 
-      res.json(idcuestn);
+      res.json({idcuestn});
     });
   } catch (error) {
     return res.status(500).json({ message: error.message });
