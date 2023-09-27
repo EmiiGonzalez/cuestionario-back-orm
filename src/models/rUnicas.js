@@ -73,6 +73,11 @@ export const rUnicas = sequelize.define("rUnicas", {
     type: DataTypes.INTEGER(1),
     allowNull: false,
   },
+},
+{
+  timestamps: true,
+  createdAt: 'creada',
+  updatedAt: 'actualizada'
 });
 
 //relacion 1 a n
