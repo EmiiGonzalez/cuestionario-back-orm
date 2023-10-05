@@ -1,8 +1,8 @@
 import { Router } from "express";
 const RouterWeb = Router();
-import { setRWeb } from "../controllers/formWebController.js";
+import { createRForm } from "../controllers/form.controller.js";
 
 RouterWeb
-    .post('/rFormWeb', setRWeb);
+    .post('/rFormWeb', createRForm);
 
 export default RouterWeb;
