@@ -4,7 +4,7 @@ import { getRForms, getRForm, createRForm, updateRForm, deleteRForm } from "../c
 
 RouterWeb
     .get('/rFormWeb', getRForms)
-    .get('/rFormWeb/create/:id', getRForm)
+    .get('/rFormWeb/:id', getRForm)
     .post('/rFormWeb/create', createRForm)
     .put('/rFormWeb/edit/:id', updateRForm)
     .delete('/rFormWeb/delete/:id', deleteRForm);

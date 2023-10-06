@@ -118,3 +118,4 @@ export const rFormWeb = sequelize.define("registros", {
 }, {
   timestamps: false
 });
+
