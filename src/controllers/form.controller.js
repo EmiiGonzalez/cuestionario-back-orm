@@ -1,11 +1,13 @@
 import { rFormWeb } from "../models/rFormWeb.js";
 import { rellenarVacios } from "../services/ruggerking.js";
+import { deleteFill, deleteFillUnico } from "../services/deleteFill.js";
 import dotenv from "dotenv";
 
 export const getRForms = async (req, res) => {
   try {
     const rForm = await rFormWeb.findAll();
-    res.json(rForm);
+    const datos = deleteFill(rForm, process.env.CHAR);
+    res.json(datos);
   } catch (error) {
     console.error("No se puede conectar con la base de datos:", error);
     res.status(500).json({
@@ -17,7 +19,8 @@ export const getRForms = async (req, res) => {
 export const getRForm = async (req, res) => {
   try {
     const rForm = await rFormWeb.findByPk(req.params.id);
-    res.json(rForm);
+    const datos = deleteFillUnico(rForm, process.env.CHAR);
+    res.json(datos);
   } catch (error) {
     console.error("No se puede conectar con la base de datos:", error);
     res.status(500).json({
@@ -65,7 +68,7 @@ export const deleteRForm = async (req, res) => {
   try {
     const rForm = await rFormWeb.destroy({
       where: {
-        id: req.params.id,
+        cuestn: req.params.id,
       },
     });
     res.json(rForm);
