@@ -44,6 +44,9 @@ export const deleteFillUnico = (datosNoFiltrados, caracter) => {
       data[clave] = datosNoFiltrados[clave].toString().replaceAll(caracter, "");
       //agregar filtro
     }
+    else{
+      data[clave] = datosNoFiltrados[clave];
+    }
   }
   return data
 }
