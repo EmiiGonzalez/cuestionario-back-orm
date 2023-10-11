@@ -52,7 +52,7 @@ export const updateRForm = async (req, res) => {
   try {
     const rForm = await rFormWeb.update(req.body, {
       where: {
-        id: req.params.id,
+        cuestn: req.params.id,
       },
     });
     res.json(rForm);
