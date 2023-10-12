@@ -1,5 +1,3 @@
-import { rFormWeb } from "../models/rFormWeb.js";
-
 export const rellenarVacios = (formData, caracter) => {
   const camposAProcesar = {
     edad: 2,

@@ -50,6 +50,7 @@ export const createRForm = async (req, res) => {
 
 export const updateRForm = async (req, res) => {
   try {
+    const formData = rellenarVacios(req.body, process.env.CHAR);
     const rForm = await rFormWeb.update(req.body, {
       where: {
         cuestn: req.params.id,
