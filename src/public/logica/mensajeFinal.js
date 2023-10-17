@@ -1,4 +1,4 @@
-export const mensajeFinal = (idcuest, boolean) => {
+export const mensajeFinal = (idcuest, boolean, msj) => {
   if (boolean) {
     const divPadre = document.createElement("div");
     divPadre.classList.add("mensajeFinal");
@@ -32,8 +32,7 @@ export const mensajeFinal = (idcuest, boolean) => {
     const mensajeTitulo = document.createElement("p");
 
     divPadre.appendChild(mensajeTitulo);
-    mensajeTitulo.innerText =
-      "Ocurrio un error al enviar el cuestionario, intente nuevamente";
+    mensajeTitulo.innerText =msj;
     mensajeTitulo.classList.add("mensajeTitulo");
     mensajeTitulo.style.color = "red";
 
