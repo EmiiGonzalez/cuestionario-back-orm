@@ -1,14 +1,16 @@
 import express from "express";
 import RouterWeb from "./routes/rFormWeb.routes.js";
 import cors from "cors";
-import { fileURLToPath } from 'url'; // Importa la función fileURLToPath para obtener la ruta del archivo
+import { fileURLToPath } from 'url';
 import path from "path";
 
-const __filename = fileURLToPath(import.meta.url); // Obtiene la ruta del archivo actual (__filename)
-const __dirname = path.dirname(__filename); // Obtiene el directorio actual (__dirname)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
-app.use('/', express.static(path.join(__dirname, 'public')))
+app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/pages', express.static(path.join(__dirname, 'pages')));
+
 app.use(
   cors({
     origin: "*",
@@ -19,5 +21,9 @@ app.use(
 
 app.use(express.json());
 app.use(RouterWeb);
+
+app.use((req, res) => {
+  res.redirect('/');
+});
 
 export default app;

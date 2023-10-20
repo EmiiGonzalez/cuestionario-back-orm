@@ -132,10 +132,11 @@ export const cuestionario = {
             texto: {
             1: 'Celular',
             2: 'PC',
-            3: 'iPad',
-            4: 'NetBook del Estado',
+            3: 'Notebook',
+            4: 'IPad',
+            5: 'NetBook del Estado',
             },
-            otraForma: {5: 'Otra(Especificar): '}
+            otraForma: {6: 'Otra(Especificar): '}
         }]
     },
     p13:{
@@ -195,7 +196,7 @@ export const valores = {
     p9: [1, 2, 3],
     p10: [1, 2, 3, 4, 5, 6, 7, 8],
     p11: [1, 2, 3, 4, 5],
-    p12: [1, 2, 3, 4, 5],
+    p12: [1, 2, 3, 4, 5, 6],
     p13: [1, 2, 3, 4, 5],
     p14: [1, 2, 3, 4],
     p15: [1, 2, 3, 4],
