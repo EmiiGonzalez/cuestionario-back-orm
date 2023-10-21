@@ -3,6 +3,8 @@ import RouterWeb from "./routes/rFormWeb.routes.js";
 import cors from "cors";
 import { fileURLToPath } from 'url';
 import path from "path";
+import https from "https";
+import fs from "fs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,6 +21,11 @@ app.use(
   })
 );
 
+const httpsOptions = {
+  key: fs.readFileSync(path.join(__dirname, 'certificados', 'key.pem')),
+  cert: fs.readFileSync(path.join(__dirname, 'certificados', 'cert.pem')),
+};
+
 app.use(express.json());
 app.use(RouterWeb);
 
@@ -26,4 +33,10 @@ app.use((req, res) => {
   res.redirect('/');
 });
 
-export default app;
+const server = https.createServer(httpsOptions, app);
+
+
+
+
+
+export default server;
