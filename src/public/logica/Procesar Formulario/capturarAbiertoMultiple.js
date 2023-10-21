@@ -40,16 +40,8 @@ export const capturarAbiertoMultiple = (elemento) => {
   let cantRespOk = validarMultiple(valorSeleccionado.respValues, cajaPregunta.id);
 
   if (!cantRespOk){
-    if (cajaPregunta.id === "p12") {
-      editarMensaje(mensaje, 9);
-      return false;
-    }
-    if (cajaPregunta.id === "p7") {
-      editarMensaje(mensaje, 6);
-      return false
-    }
-    
-   
+    editarMensaje(mensaje, 6);
+    return false
   }
   if (valorSeleccionado.respValues.length <= 0) {
     editarMensaje(mensaje, 1);

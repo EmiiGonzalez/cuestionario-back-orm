@@ -24,5 +24,4 @@ const mensajes = {
   6: "Solo se pueden seleccionar hasta 3 respuestas",
   7: "Debe seleccionar mas de una opcion",
   8: "No se admiten respuestas repetidas",
-  9: "Solo se pueden seleccionar hasta 5 respuestas",
 };
