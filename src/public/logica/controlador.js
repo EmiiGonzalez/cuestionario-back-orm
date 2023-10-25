@@ -3,7 +3,7 @@ import { mensajeFinal } from "./mensajeFinal.js";
 export const controladorDePeticiones = async (resultados, formularioDiv) => {
   const direccion = `${window.location.protocol}//${window.location.hostname}:${window.location.port}`;
   const datosAEnviar = JSON.stringify(resultados);
-  const url = `http://proyecto-practicas.ddns.net:3030/rFormWeb/create`;
+  const url = `http://proyecto-practicas.ddns.net:3000/rFormWeb/create`;
 
   formularioDiv.children[0].remove();
 

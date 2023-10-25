@@ -19,11 +19,8 @@ app.use(
 
 
 app.use(express.json());
+
+
 app.use(RouterWeb);
-
-app.use((req, res) => {
-  res.redirect('/');
-});
-
 
 export default app;
