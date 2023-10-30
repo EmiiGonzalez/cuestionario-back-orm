@@ -38,11 +38,11 @@ Después de iniciar el servidor, puede acceder a la API en `http://localhost:300
 ## Rutas
 | Acción | Ruta |
 |---|---|
-| Obtener todos los registros | `/rFormWeb` |
-| Obtener un registro específico | `/rFormWeb/:id` |
-| Crear un registro | `/rFormWeb/create` |
-| Actualizar un registro | `/rFormWeb/edit/:id` |
-| Eliminar un registro | `/rFormWeb/delete/:id` |
+| Obtener todos los registros | `/api/rFormWeb` |
+| Obtener un registro específico | `/api/rFormWeb/:id` |
+| Crear un registro | `/api/rFormWeb/create` |
+| Actualizar un registro | `/api/rFormWeb/edit/:id` |
+| Eliminar un registro | `/api/rFormWeb/delete/:id` |
 
 ## Contribución
 
@@ -93,11 +93,11 @@ After starting the server, you can access the API at `http://localhost:3000`.
 
 | Action | Route |
 |-|-|
-| Get all records | `/rFormWeb` |
-| Get a specific record | `rFormWeb/:id` |  
-| Create a record | `/rFormWeb/create` |
-| Update a record | `/rFormWeb/edit/:id` |
-| Delete a record | `/rFormWeb/delete/:id` |
+| Get all records | `/api/rFormWeb` |
+| Get a specific record | `/api/rFormWeb/:id` |  
+| Create a record | `/api/rFormWeb/create` |
+| Update a record | `/api/rFormWeb/edit/:id` |
+| Delete a record | `/api/rFormWeb/delete/:id` |
 
 ## Contributing
 
