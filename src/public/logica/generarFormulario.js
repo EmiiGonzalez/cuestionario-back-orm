@@ -1,4 +1,10 @@
 import { validarEdad } from "./Procesar Formulario/validarEdad.js";
+import {bntSiguienteTextEspanol, bntSiguienteTextIngles, btnSubmitEspanol, btnSubmitIngles} from "./textosTraducidos.js"
+
+let idiomaEspanol = (navigator.language.startsWith("es")) && !["et", "et-EE"].includes(navigator.language.toLowerCase())
+
+let idiomabtn =  idiomaEspanol ? bntSiguienteTextEspanol : bntSiguienteTextIngles;
+let idiomabtnSubmit =  idiomaEspanol ? btnSubmitEspanol : btnSubmitIngles ;
 
 const generarUnicaOpcion = ({ texto, tipo, opciones }) => {
   const div = document.createElement("div");
@@ -9,7 +15,7 @@ const generarUnicaOpcion = ({ texto, tipo, opciones }) => {
 
   text.classList.add("textoPregunta");
 
-  btnSiguiente.innerText = "Siguiente";
+  btnSiguiente.innerText = idiomabtn;
   btnSiguiente.classList.add("btnSiguiente");
   btnSiguiente.type = "button";
 
@@ -53,7 +59,7 @@ const generarEscala = ({ texto, tipo, opciones }) => {
 
   text.classList.add("textoPregunta");
 
-  btnSiguiente.innerText = "Siguiente";
+  btnSiguiente.innerText = idiomabtn;
   btnSiguiente.classList.add("btnSiguiente");
   btnSiguiente.type = "button";
 
@@ -98,7 +104,7 @@ const generarAbierto = ({ texto, tipo, opciones }) => {
 
   text.classList.add("textoPregunta");
 
-  btnSiguiente.innerText = "Siguiente";
+  btnSiguiente.innerText = idiomabtn;
   btnSiguiente.classList.add("btnSiguiente");
   btnSiguiente.type = "button";
 
@@ -169,7 +175,7 @@ const generarAbierto = ({ texto, tipo, opciones }) => {
 
   text.classList.add("textoPregunta");
 
-  btnSiguiente.innerText = "Siguiente";
+  btnSiguiente.innerText = idiomabtn;
   btnSiguiente.classList.add("btnSiguiente");
   btnSiguiente.type = "button";
   
@@ -232,7 +238,7 @@ const generarAbiertoMultiple = ({ texto, opciones, tipo }) => {
 
   text.classList.add("textoPregunta");
 
-  btnSiguiente.innerText = "Siguiente";
+  btnSiguiente.innerText = idiomabtn;
   btnSiguiente.classList.add("btnSiguiente");
   btnSiguiente.type = "button";
 
@@ -305,7 +311,7 @@ const generarFinal = ({ texto }) => {
   text.classList.add("textoPregunta");
 
   submit.type = "submit";
-  submit.value = "Enviar";
+  submit.value = idiomabtnSubmit;
   submit.classList.add("btnSubmit");
   submit.name = "submit";
 
@@ -331,7 +337,7 @@ const generarEdad = ({ texto }) => {
 
   text.classList.add("textoPregunta");
 
-  btnSiguiente.innerText = "Siguiente";
+  btnSiguiente.innerText = idiomabtn;
   btnSiguiente.classList.add("btnSiguiente");
   btnSiguiente.type = "button";
 
@@ -365,7 +371,7 @@ const generarSexo = ({ texto, opciones }) => {
 
   text.classList.add("textoPregunta");
 
-  btnSiguiente.innerText = "Siguiente";
+  btnSiguiente.innerText = idiomabtn;
   btnSiguiente.classList.add("btnSiguiente");
   btnSiguiente.type = "button";
 
@@ -415,7 +421,7 @@ const generarRanking = ({ texto, tipo, opciones, texto2 }) => {
 
   text.classList.add("textoPregunta");
 
-  btnSiguiente.innerText = "Siguiente";
+  btnSiguiente.innerText = idiomabtn;
   btnSiguiente.classList.add("btnSiguiente");
   btnSiguiente.type = "button";
 

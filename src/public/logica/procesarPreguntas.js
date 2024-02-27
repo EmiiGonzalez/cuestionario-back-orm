@@ -10,7 +10,9 @@ import { controladorDePeticiones } from "./controlador.js";
 import { capturarRanking } from "./Procesar Formulario/capturarRanking.js";
 
 export const procesarFormulario = (formulario) => {
+
   const btnsSiguiente = formulario.querySelectorAll(".btnSiguiente");
+  
   const primerElemento = formulario.children[0];
   primerElemento.classList.remove("disabled");
 

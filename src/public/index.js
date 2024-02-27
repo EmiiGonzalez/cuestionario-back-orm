@@ -1,11 +1,25 @@
-import { cuestionario } from "./logica/Cuestionario.js";
+import { cuestionarioEsp, cuestionarioEng } from "./logica/Cuestionario.js";
 import { tiposFormulario } from "./logica/generarFormulario.js";
 import { procesarFormulario } from "./logica/procesarPreguntas.js";
+import {tituloEspanol, tituloIngles, bntTextEspanol, bntTextIngles} from "./logica/textosTraducidos.js";
 
 
 
 const formulario = document.getElementById("form");
 const btnInicio = document.querySelector(".btnIniciar");
+
+//Seleccion del idioma a renderizar
+//corroboro el idioma
+let idiomaEspanol = (navigator.language.startsWith("es")) && !["et", "et-EE"].includes(navigator.language.toLowerCase())
+//aplico el idioma al cuestionario global, el mensaje de bienvenida y los botones
+let cuestionario = idiomaEspanol ? cuestionarioEsp : cuestionarioEng;
+
+idiomaEspanol ? btnInicio.textContent= bntTextEspanol : btnInicio.textContent= bntTextIngles
+
+idiomaEspanol ? document.querySelector(".titulo").textContent = tituloEspanol : document.querySelector(".titulo").textContent = tituloIngles
+
+//fin de seleccion del idioma a renderizar
+
 
 
 btnInicio.addEventListener("click", () => {
@@ -30,6 +44,8 @@ btnInicio.addEventListener("click", () => {
 
 
 const iniciarCuestionario = (formulario) => {
+
+
   for (const preguntaNumero in cuestionario) {
     let tipo = cuestionario[preguntaNumero].tipo;
     const divGenerar = tiposFormulario[tipo](cuestionario[preguntaNumero]);

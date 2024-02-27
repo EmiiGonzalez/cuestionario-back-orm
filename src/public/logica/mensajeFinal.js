@@ -1,4 +1,7 @@
+import { mensajeFinalTituloEsp, mensajeFinalTituloEng, mensajeFinal2 } from "./textosTraducidos.js"
 export const mensajeFinal = (idcuest, boolean, msj) => {
+  let idiomaEspanol = (navigator.language.startsWith("es")) && !["et", "et-EE"].includes(navigator.language.toLowerCase())
+
   if (boolean) {
     const divPadre = document.createElement("div");
     divPadre.classList.add("mensajeFinal");
@@ -8,8 +11,8 @@ export const mensajeFinal = (idcuest, boolean, msj) => {
     const mensaje2 = document.createElement("p");
 
     divPadre.appendChild(mensajeTitulo);
-    mensajeTitulo.innerText =
-      "El cuestionario ha sido enviado con éxito, muchas gracias por participar!";
+    idiomaEspanol ? mensajeTitulo.innerText = mensajeFinalTituloEsp : mensajeTitulo.innerText = mensajeFinalTituloEng;
+      
     mensajeTitulo.classList.add("mensajeTitulo");
 
     divPadre.appendChild(divSuccess);
@@ -21,7 +24,7 @@ export const mensajeFinal = (idcuest, boolean, msj) => {
 
     divSuccess.appendChild(mensaje2);
     mensaje2.classList.add("mensaje2");
-    mensaje2.innerText = `Su cuestionario fue el numero: ${idcuest}`;
+    idiomaEspanol ? mensaje2.innerText = `${mensajeFinal2.esp} ${idcuest}`: mensaje2.innerText = `${mensajeFinal2.eng} ${idcuest}`;
 
     return divPadre;
   }

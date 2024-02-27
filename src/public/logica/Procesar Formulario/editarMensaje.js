@@ -1,3 +1,8 @@
+import { mensajesEsp, mensajesEng } from "../textosTraducidos.js";
+
+let idiomaEspanol = (navigator.language.startsWith("es")) && !["et", "et-EE"].includes(navigator.language.toLowerCase())
+
+
 export const editarMensaje = (mensaje, tipoDeError) => {
   const divPadre = mensaje.closest(".cajaPregunta");
   mensaje.classList.remove("disabled");
@@ -15,13 +20,5 @@ export const editarMensaje = (mensaje, tipoDeError) => {
   }, 3500); // 5000 milisegundos = 5 segundos
 };
 
-const mensajes = {
-  1: "Debe seleccionar una opción",
-  2: "El valor que se intenta enviar es invalido",
-  3: "Debe ingresar al menos 4 caracteres",
-  4: "Por favor ingrese un numero entre 1 y 99",
-  5: "Limite de caracteres exedido, maximo 180 caracteres",
-  6: "Solo se pueden seleccionar hasta 3 respuestas",
-  7: "Debe seleccionar mas de una opcion",
-  8: "No se admiten respuestas repetidas",
-};
+const mensajes = idiomaEspanol ? mensajesEsp : mensajesEng;
+
