@@ -10,4 +10,5 @@ export const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERN
     dialect: process.env.DB_DIALECT,
     timezone: process.env.DB_TIMEZONE,
     // Otras opciones de configuración de Sequelize
+    logging: false
 });
